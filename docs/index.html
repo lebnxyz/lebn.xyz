@@ -1,1 +1,267 @@
-Undergoing maintenance
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lebn.xyz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    html {
+      background-color: #FFFCF7;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .square-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .other-font {
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+    }
+
+    .self-link {
+      font-weight: bold;
+    }
+
+    #profile-bar {
+      width: 100%;
+      height: 10%;
+      background-color: #EE161F;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #profile-bar span {
+      padding: .5em;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: white;
+      cursor: not-allowed;
+    }
+
+    #profile-bar span:before {
+      content: '▾';
+      font-size: 1.25em;
+      padding: 0;
+    }
+
+    #lang-select {
+      padding: .5em;
+      font-size: 1.25em;
+      font-weight: bold;
+      color: white;
+      background-color:rgba(0, 0, 0, 0%);
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #lang-select option:first-child {
+      display: none;
+    }
+
+    /* none of this option stuff works haha */
+    #lang-select option {
+      background-color: red;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #lang-select option:hover {
+      background-color: red;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #header {
+      height: 20%;
+      background-color: #EEE7DC;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #header header {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      cursor: default;
+    }
+
+    #header img {
+      width: 5.25em;
+      margin-left: 1em;
+      margin-right: 1em;
+      border-radius: 50%;
+    }
+
+    #header section {
+      flex-grow: 3;
+      padding: .25em;
+      height: 100%;
+    }
+
+    #header h1 {
+      font-weight: 900;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    #header p {
+      font-size: 1.25em;
+      /* I want to set opacity: 55% but the selection would look bad */
+      color: rgba(0, 0, 0, 55%);
+      margin: 0;
+    }
+
+    #header nav ul {
+      cursor: default;
+      padding-right: 1em;
+      font-size: 1.5em;
+    }
+
+    #header nav li {
+      list-style: none;
+      display: inline;
+      color: black;
+    }
+
+    #header nav li:not(:first-child):before {
+      content: '•';
+      font-weight: 900;
+      padding: 0.5em;
+    }
+
+    #header nav li a {
+      color: black;
+    }
+
+    #header nav li a:not(.self-link) {
+      text-decoration: underline;
+    }
+
+    #header nav li a:not(.self-link):hover {
+      text-decoration: none;
+    }
+
+    #search {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    form * {
+      font-family: inherit;
+      font-size: 3em;
+      margin: 1em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      border-radius: 30px;
+    }
+
+    form input {
+      flex: 4 1;
+      width: 100%;
+      padding: 1em;
+      border: 0;
+    }
+
+    form button {
+      flex: 1 4;
+    }
+
+    form button:hover {
+      filter: brightness(90%);
+    }
+
+    button, input {
+      background-color: #EEE7DC;
+      border: 3px solid #666065;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    hr {
+      border: 2px solid #333;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+
+    article {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+
+    article h2 {
+      font-weight: 900;
+      font-size: 2em;
+    }
+  </style>
+  </head>
+  <body>
+  <nav id="profile-bar">
+    <select id="lang-select" name="language">
+      <option selected disabled>language</option>
+      <option value="en">english</option>
+      <option value="lb">لبناني</option>
+      <option value="ar">الفصحى</option>
+      <option value="fr">french</option>
+    </select>
+    <span>my profile</span>
+  </nav>
+  <section id="header">
+    <header>
+      <div class="square-wrapper">
+        <img alt="The site logo." src="logo.png">
+      </div>
+      <section>
+        <h1>lebn.xyz</h1>
+        <p class="other-font">placeholder page.</p>
+      </section>
+    </header>
+    <nav>
+      <ul>
+        <li><a class="self-link">dictionary</a></li>
+        <li><a href="./add.html">add a word</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section id="main">
+    <form id="search">
+      <input id="search-bar" placeholder="🔍 Search">
+      <!-- <button>↩</button> -->
+    </form>
+    <p id="error"></p>
+    <hr>
+    <article>
+      <h2>Under construction</h2>
+      <p>
+        This is a dummy homepage that doesn't do anything yet, although that'll change with further development.
+        Follow <a href="https://twitter.com/lebnxyz">@lebnxyz</a> on Twitter for updates!
+      </p>
+    </article>
+  </section>
+  <!-- <section id="result" class="hidden">
+    <h2 id="word"></h2>
+    <p id="definition"></p>
+    <button id="back" type="button">⬅ Back</button>
+  </section> -->
+  </body>
+</html>
